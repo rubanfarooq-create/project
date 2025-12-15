@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag Drop Demo</title>
+    <link rel="stylesheet" 
+          href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background: lightcoral;
+        padding: 20px;
+        cursor: move;
+      }
+
+      #dropArea {
+        width: 200px;
+        height: 200px;
+        background: lightgreen;
+        margin-top: 30px;
+        border: 2px dashed #444;
+      }
+    </style>
+</head>
+<body>
+
+<div id="box">Drag Me</div>
+<div id="dropArea">Drop Here</div>
+
+<script>
+  $("#box").draggable();
+
+  $("#dropArea").droppable({
+    drop: function(event, ui){
+      $(this).css("background", "yellow")
+             .html("Dropped Successfully!");
+    }
+  });
+</script>
+
+</body>
+</html>

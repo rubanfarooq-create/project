@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabs Demo</title>
+    <link rel="stylesheet" 
+          href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+</head>
+<body>
+
+<div id="myTabs">
+  <ul>
+    <li><a href="#tab1">Overview</a></li>
+    <li><a href="#tab2">Pricing</a></li>
+    <li><a href="#tab3">Contact</a></li>
+  </ul>
+
+  <div id="tab1">This is the overview section.</div>
+  <div id="tab2">This is the pricing section.</div>
+  <div id="tab3">This is the contact section.</div>
+</div>
+
+<script>
+  $("#myTabs").tabs();
+</script>
+
+</body>
+</html>
