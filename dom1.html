@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>student Registration</h2>
+ <!-- === Input Fields === -->
+ <input type="text" id="name" placeholder="Enter Name">
+ <input type="text" id="class" placeholder="Enter Class">
+ <input type="number" id="age" placeholder="Enter Age">
+ <br>
+ <button onclick="addStudent()">Add Student</button>
+
+ <!-- === Table === -->
+ <table id="studentTable">
+   <tr>
+     <th>Name</th>
+     <th>Class</th>
+     <th>Age</th>
+   </tr>
+ </table>
+
+ <script>
+   // === Function to Add Student in Table ===
+   function addStudent() {
+     // Get input values
+     let name = document.getElementById("name").value.trim();
+     let studentClass = document.getElementById("class").value.trim();
+     let age = document.getElementById("age").value.trim();
+
+     // Validation - check if any field is empty
+     if (name === "" || studentClass === "" || age === "") {
+       alert("  Please fill all fields!");
+       return;
+     }
+
+     // Get the table where we’ll add new rows
+     let table = document.getElementById("studentTable");
+
+     // Create a new row element
+     let newRow = document.createElement("tr");
+
+     // Create columns (td)
+     let col1 = document.createElement("td");
+     col1.innerText = name;
+
+     let col2 = document.createElement("td");
+     col2.innerText = studentClass;
+
+     let col3 = document.createElement("td");
+     col3.innerText = age;
+
+     // Append columns to row
+     newRow.append(col1, col2, col3);
+
+     // Add the new row to the table
+     table.append(newRow);
+
+     // Clear input fields after adding
+     document.getElementById("name").value = "";
+     document.getElementById("class").value = "";
+     document.getElementById("age").value = "";
+   }
+ </script>
+
+
+
+
+</body>
+</html>
